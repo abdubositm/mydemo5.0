@@ -15,27 +15,19 @@ class _HomePageState extends State<HomePage> {
         title: Text('PDP'),
       ),
       backgroundColor: Colors.grey,
-      body:Container(
-        padding: EdgeInsets.all(200),
+      body:Form(
         child: Column(
           children: [
-           Container(
-             height: 45,
-             decoration: BoxDecoration(
-               color: Colors.blue,
-             ),
-             child:  TextField(
-               decoration: InputDecoration(
-                   hintText: 'Phone',
-                   hintStyle: TextStyle(color: Colors.green),
-                   border: InputBorder.none,
-                   prefix: Icon(Icons.phone)
-               ),
-             ),
-           )
+            Padding(padding: EdgeInsets.all(20),
+              child: TextFormField(
+                decoration: InputDecoration(labelStyle: "Email"),
+                validator: (input) => !input.contains('@') ? "Pleaswe" : null,
+              ),
+            ),
           ],
         ),
       )
+
     );
   }
 }
